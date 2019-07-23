@@ -2,7 +2,7 @@ package Jobeet::Schema::Types;
 use 5.16.3;
 use parent 'Exporter';
 #他のPackageにsubを使われる時インポートしてくれる
-our @EXPORT = qw(PK_INTEGER INTEGER VARCHAR TINYINT DATETIME);
+our @EXPORT = qw(PK_INTEGER INTEGER VARCHAR NULLABLE_VARCHAR TINYINT DATETIME);
 
 sub PK_INTEGER {
 	+{
@@ -44,6 +44,15 @@ sub VARCHAR {
         data_type   => 'VARCHAR',
         size        => 255,
         is_nullable => 0,
+        @_,
+    };
+}
+
+sub NULLABLE_VARCHAR {
+    +{
+        data_type   => 'VARCHAR',
+        size        => 255,
+        is_nullable => 1,
         @_,
     };
 }

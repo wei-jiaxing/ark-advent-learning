@@ -15,8 +15,8 @@ GetOptions(
 
 my $dsn = models('conf')->{database}->[0];
 my $gd = GitDDL->new(
-	work_tree => './'.
-	ddl_file => './sql/schema.sql',
+	work_tree => models('home') . "/..",
+	ddl_file => './Jobeet/sql/schema.sql',
 	dsn => models('conf')->{database},
 );
 
@@ -26,7 +26,7 @@ eval {
 	local *STDERR = $fh;
 	$db_version = $gd->database_version;
 };
-
+say "version: $db_version";
 if (!$db_version){
 	$gd->deploy;
 	say 'done migrate';
@@ -34,7 +34,7 @@ if (!$db_version){
 }
 
 if ($gd->check_version){
-	say ' Database is already latest';
+	say 'Database is already latest';
 }else{
 	say $gd->diff;
 	if (!$options{'dry-run'}){
