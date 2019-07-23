@@ -2,12 +2,11 @@
 
 use strict;
 use warnings;
-use FindBin::libs;
+use FindBin::libs; # use lib 'lib'と同じ、だけど、相対パスではないからより良い
 
 use Jobeet::Models;
 
 my $category_model = models('Schema::Category');
-
 for my $category (qw/Design Programming Manager Administrator/){
 	$category_model->create({name => $category});
 }
