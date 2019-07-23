@@ -703,6 +703,61 @@ DISTRIBUTIONS
       strict 0
       warnings 0
       warnings::register 0
+  DateTime-Format-Builder-0.82
+    pathname: D/DR/DROLSKY/DateTime-Format-Builder-0.82.tar.gz
+    provides:
+      DateTime::Format::Builder 0.82
+      DateTime::Format::Builder::Parser 0.82
+      DateTime::Format::Builder::Parser::Dispatch 0.82
+      DateTime::Format::Builder::Parser::Quick 0.82
+      DateTime::Format::Builder::Parser::Regex 0.82
+      DateTime::Format::Builder::Parser::Strptime 0.82
+      DateTime::Format::Builder::Parser::generic 0.82
+    requirements:
+      Carp 0
+      DateTime 1.00
+      DateTime::Format::Strptime 1.04
+      ExtUtils::MakeMaker 0
+      Params::Validate 0.72
+      Scalar::Util 0
+      parent 0
+      strict 0
+      vars 0
+      warnings 0
+  DateTime-Format-SQLite-0.11
+    pathname: C/CF/CFAERBER/DateTime-Format-SQLite-0.11.tar.gz
+    provides:
+      DateTime::Format::SQLite 0.11
+    requirements:
+      DateTime 0.1
+      DateTime::Format::Builder 0.6
+      ExtUtils::MakeMaker 0
+      perl 5.003
+  DateTime-Format-Strptime-1.76
+    pathname: D/DR/DROLSKY/DateTime-Format-Strptime-1.76.tar.gz
+    provides:
+      DateTime::Format::Strptime 1.76
+      DateTime::Format::Strptime::Types 1.76
+    requirements:
+      Carp 0
+      DateTime 1.00
+      DateTime::Locale 1.23
+      DateTime::Locale::Base 0
+      DateTime::Locale::FromData 0
+      DateTime::TimeZone 2.09
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      Params::ValidationCompiler 0
+      Specio 0.33
+      Specio::Declare 0
+      Specio::Exporter 0
+      Specio::Library::Builtins 0
+      Specio::Library::String 0
+      Try::Tiny 0
+      constant 0
+      parent 0
+      strict 0
+      warnings 0
   DateTime-Locale-1.24
     pathname: D/DR/DROLSKY/DateTime-Locale-1.24.tar.gz
     provides:
@@ -1469,6 +1524,54 @@ DISTRIBUTIONS
       Module::Build::Tiny 0.035
       Scalar::Util 1.19
       perl 5.008001
+  Git-Repository-1.323
+    pathname: B/BO/BOOK/Git-Repository-1.323.tar.gz
+    provides:
+      Git::Repository 1.323
+      Git::Repository::Command 1.323
+      Git::Repository::Plugin 1.323
+      Test::Git 1.323
+    requirements:
+      Carp 0
+      Cwd 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      File::Spec::Functions 0
+      File::Temp 0
+      Git::Version::Compare 1.001
+      IO::Handle 0
+      Scalar::Util 0
+      System::Command 1.118
+      Test::Builder 0
+      namespace::clean 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Git-Version-Compare-1.004
+    pathname: B/BO/BOOK/Git-Version-Compare-1.004.tar.gz
+    provides:
+      Git::Version::Compare 1.004
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      perl 5.006
+      strict 0
+      warnings 0
+  GitDDL-0.03
+    pathname: T/TY/TYPESTER/GitDDL-0.03.tar.gz
+    provides:
+      GitDDL 0.03
+    requirements:
+      DBI 0
+      ExtUtils::MakeMaker 6.36
+      File::Path 2.07
+      Git::Repository 0
+      Mouse 0
+      SQL::Translator 0.11016
+      Test::Git 0
+      Test::More 0.86
   HTML-Escape-1.10
     pathname: T/TO/TOKUHIROM/HTML-Escape-1.10.tar.gz
     provides:
@@ -1687,6 +1790,19 @@ DISTRIBUTIONS
       IO::Socket 0
       Socket 1.97
       Test::More 0.88
+  IPC-Run-20180523.0
+    pathname: T/TO/TODDR/IPC-Run-20180523.0.tar.gz
+    provides:
+      IPC::Run 20180523.0
+      IPC::Run::Debug 20180523.0
+      IPC::Run::IO 20180523.0
+      IPC::Run::Timer 20180523.0
+      IPC::Run::Win32Helper 20180523.0
+      IPC::Run::Win32IO 20180523.0
+      IPC::Run::Win32Pump 20180523.0
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0.47
   Import-Into-1.002005
     pathname: H/HA/HAARG/Import-Into-1.002005.tar.gz
     provides:
@@ -2093,6 +2209,25 @@ DISTRIBUTIONS
       Scalar::Util 1.18
       Test::More 0.42
       perl 5.00503
+  Params-Validate-1.29
+    pathname: D/DR/DROLSKY/Params-Validate-1.29.tar.gz
+    provides:
+      Params::Validate 1.29
+      Params::Validate::Constants 1.29
+      Params::Validate::PP 1.29
+      Params::Validate::XS 1.29
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.28
+      Module::Implementation 0
+      Scalar::Util 1.10
+      XSLoader 0
+      perl 5.008001
+      strict 0
+      vars 0
+      warnings 0
   Params-ValidationCompiler-0.30
     pathname: D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz
     provides:
@@ -2575,6 +2710,28 @@ DISTRIBUTIONS
     requirements:
       Carp 0
       ExtUtils::MakeMaker 6.17
+      constant 0
+      perl 5.006
+      strict 0
+      warnings 0
+  System-Command-1.119
+    pathname: B/BO/BOOK/System-Command-1.119.tar.gz
+    provides:
+      System::Command 1.119
+      System::Command::Reaper 1.119
+    requirements:
+      Carp 0
+      Cwd 0
+      Data::Dumper 0
+      ExtUtils::MakeMaker 0
+      Fcntl 0
+      IO::Handle 0
+      IO::Select 0
+      IPC::Run 0
+      List::Util 0
+      POSIX 0
+      Scalar::Util 0
+      Symbol 0
       constant 0
       perl 5.006
       strict 0

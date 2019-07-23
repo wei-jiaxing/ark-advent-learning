@@ -10,10 +10,11 @@ __PACKAGE__->table('jobeet_job');
 __PACKAGE__->add_columns(
 	id => PK_INTEGER,
 	category_id => PK_INTEGER,
-	type => VARCHAR(
-        is_nullable => 1
-    ),
+	type => NULLABLE_VARCHAR,
 	position => VARCHAR,
+    company => NULLABLE_VARCHAR,
+    logo => NULLABLE_VARCHAR,
+    url => NULLABLE_VARCHAR,
     location => VARCHAR,
     description => {
         data_type   => 'TEXT',
