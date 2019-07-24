@@ -9,7 +9,7 @@ sub index :Path :Args(0){
 	my($self, $c) = @_;
 	# stashはグローバル変数の入れ物、VとCの間で変数共有に使用される
 	$c->stash->{jobs} = models('Schema::Job')->search({
-		created_at => { '>=', models('Schema')->now->add( days => -30)},
+		expires_at => { '>=', models('Schema')->now },
 	});
 }
 
