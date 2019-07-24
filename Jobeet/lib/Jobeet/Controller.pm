@@ -16,3 +16,13 @@ sub index :Path :Args(0) {
 }
 
 __PACKAGE__->meta->make_immutable;
+
+#endは実行の最後に実行される
+sub end :Private {
+    my ($self, $c) = @_;
+
+    unless ($c->res->body or $c->res->status =~ /^3\d\d/){
+        # ビューに処理を配送する
+        $c->forward( $c->view('MT'));
+    }
+}
