@@ -8,9 +8,7 @@ use Jobeet::Models;
 sub index :Path :Args(0){
 	my($self, $c) = @_;
 	# stashはグローバル変数の入れ物、VとCの間で変数共有に使用される
-	$c->stash->{jobs} = models('Schema::Job')->search({
-		expires_at => { '>=', models('Schema')->now },
-	});
+	$c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
 }
 
 # /job/{job_token}
