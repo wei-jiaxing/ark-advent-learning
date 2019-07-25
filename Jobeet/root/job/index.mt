@@ -1,10 +1,5 @@
 ? extends 'common/jobs_base';
 
-? block stylesheets => sub {
-<link rel="stylesheet" type="text/css" href="<?= $c->uri_for('/css/main.css') ?>" />
-<link rel="stylesheet" type="text/css" href="<?= $c->uri_for('/css/jobs.css') ?>" />
-? }
-
 ? block content => sub {
 <div id="jobs">
 ? for my $category ($c->stash->{categories}->all) {
