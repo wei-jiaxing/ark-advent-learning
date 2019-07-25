@@ -4,6 +4,8 @@ use warnings;
 use parent 'Jobeet::Schema::ResultBase';
 use Jobeet::Schema::Types;
 use Jobeet::Models;
+use Digest::SHA1 qw(sha1_hex);
+use Data::UUID;
 
 # __PACKAGE__はこのファイルのパーケージ名を取得する
 __PACKAGE__->table('jobeet_job');
@@ -44,5 +46,6 @@ __PACKAGE__->belongs_to( category => 'Jobeet::Schema::Result::Category', 'catego
 sub insert{
     my $self = shift;
     $self->expires_at( models('Schema')->now->add( days => models('conf')->{active_days} ));
+    $self->token( sha1_hex(Data::UUID->new->create) );
     $self->next::method(@_);
 }
