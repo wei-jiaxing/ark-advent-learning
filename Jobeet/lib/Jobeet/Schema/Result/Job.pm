@@ -43,9 +43,24 @@ __PACKAGE__->add_unique_constraint(['token']);
 
 __PACKAGE__->belongs_to( category => 'Jobeet::Schema::Result::Category', 'category_id');
 
-sub insert{
+sub insert {
     my $self = shift;
     $self->expires_at( models('Schema')->now->add( days => models('conf')->{active_days} ));
     $self->token( sha1_hex(Data::UUID->new->create) );
     $self->next::method(@_);
+}
+
+sub is_expired {
+    my ($self) = @_;
+    $self->days_before_expired < 0;
+}
+
+sub days_before_expired {
+    my ($self) = @_;
+    ($self->expires_at - models('Schema')->now)->days;
+}
+
+sub expires_soon {
+    my ($self) = @_;
+    $self->days_before_expired < 5;
 }
