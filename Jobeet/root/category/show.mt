@@ -1,6 +1,6 @@
 ? my $category = $c->stash->{category};
 
-? extends 'common/base';
+? extends 'common/jobs_base';
 
 ? block stylesheets => sub {
 <link rel="stylesheet" type="text/css" href="<?= $c->uri_for('/css/main.css') ?>" />
