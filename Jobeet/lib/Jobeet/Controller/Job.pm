@@ -7,8 +7,8 @@ use Jobeet::Models;
 # index: Localなら /job/indexにマッチして、index.mtを使う
 sub index :Path :Args(0){
 	my($self, $c) = @_;
-	# stashはグローバル変数の入れ物、VとCの間で変数共有に使用される
-	$c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
+
+	$c->stash->{categories} = models('Schema::Category')->get_with_jobs;
 }
 
 # /job/{job_token}

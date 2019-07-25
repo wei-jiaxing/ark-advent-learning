@@ -7,9 +7,9 @@ use FindBin::libs; # use lib 'lib'と同じ、だけど、相対パスではな�
 use Jobeet::Models;
 
 my $category_model = models('Schema::Category');
-for my $category (qw/Design Programming Manager Administrator/){
-	$category_model->create({name => $category});
-}
+# for my $category (qw/Design Programming Manager Administrator/){
+# 	$category_model->create({name => $category});
+# }
 
 my $pg_category = $category_model->find({name => "Programming"});
 #has_many時のキーはjobsだから、add_to_{key}かな
@@ -24,9 +24,9 @@ $pg_category->add_to_jobs({
     how_to_apply => 'Send your resume to fabien.potencier [at] sensio.com',
     is_public    => 1,
     is_activated => 1,
-    token        => 'job_sensio_labs',
+    token        => 'job_sensio_labs1',
     email        => 'job@example.com',
-    expires_at   => '2010-10-10',
+    expires_at   => '2019-10-10',
 });
 
 my $design_category = models('Schema::Category')->find({ name => 'Design' });
@@ -41,9 +41,9 @@ $design_category->add_to_jobs({
   how_to_apply   => 'Send your resume to fabien.potencier [at] sensio.com',
     is_public    => 1,
     is_activated => 1,
-    token        => 'job_extreme_sensio',
+    token        => 'job_extreme_sensio2',
     email        => 'job@example.com',
-    expires_at   => '2010-10-10',
+    expires_at   => '2019-10-10',
 });
 
 my $job_rs = models('Schema::Job');
@@ -59,6 +59,6 @@ my $job = $job_rs->create({
     how_to_apply => 'Send your resume to lorem.ipsum [at] dolor.sit',
     is_public    => 1,
     is_activated => 1,
-    token        => 'job_expired',
+    token        => 'job_expired3',
     email        => 'job@example.com',
 });
