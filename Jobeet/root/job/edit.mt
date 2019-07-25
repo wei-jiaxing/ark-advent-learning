@@ -2,7 +2,7 @@
 
 ? block content => sub {
 
-<h1>New Job</h1>
+<h1>Edit Job</h1>
 
 ?= include('job/_partial_form', $c->stash->{form});
 

@@ -37,6 +37,14 @@ param url => (
     type  => 'URLField',
 );
 
+param position => (
+    label       => 'position',
+    type        => 'TextField',
+    constraints => [
+        'NOT_NULL',
+    ],
+);
+
 param location => (
     label       => 'Location',
     type        => 'TextField',
