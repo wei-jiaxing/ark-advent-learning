@@ -64,3 +64,8 @@ sub expires_soon {
     my ($self) = @_;
     $self->days_before_expired < 5;
 }
+
+sub publish {
+    my ($self) = @_;
+    $self->update({ is_activated => 1 });
+}
