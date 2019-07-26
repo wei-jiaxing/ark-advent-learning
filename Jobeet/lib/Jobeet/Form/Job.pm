@@ -81,9 +81,10 @@ param how_to_apply => (
 
 param email => (
     label       => 'Email',
-    type        => 'TextField',
+    type        => 'EmailField',
     constraints => [
         'NOT_NULL',
+        #チュートリアルはこれの追加 'EMAIL_LOOSE',
     ],
 );
 
