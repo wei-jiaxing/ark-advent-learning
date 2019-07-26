@@ -57,7 +57,9 @@ sub is_expired {
 
 sub days_before_expired {
     my ($self) = @_;
-    ($self->expires_at - models('Schema')->now)->days;
+    my $now = models('Schema')->now;
+    $self->expires_at->delta_days($now)->in_units('days');
+    
 }
 
 sub expires_soon {
