@@ -84,6 +84,7 @@ param email => (
     type        => 'EmailField',
     constraints => [
         'NOT_NULL',
+        #チュートリアルはこれの追加 'EMAIL_LOOSE',
     ],
 );
 

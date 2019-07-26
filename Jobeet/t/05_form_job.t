@@ -38,7 +38,30 @@ use_ok 'Jobeet::Form::Job';
 
 	like $f->error_message_plain('description'), qr(required), 'description required ok';
 	like $f->error_message_plain('how_to_apply'), qr/required/, 'how_to_apply required ok';
+	like $f->error_message_plain('category'), qr/required/, 'category required ok';
+	like $f->error_message_plain('type'), qr/required/, 'type required ok';
 	like $f->error_message_plain('email'), qr/invalid/, 'email is invalid ok';
+}
+
+{
+	my $f = Jobeet::Form::Job->new(
+		CGI::Simple->new({
+			category     => 'design',
+			type         => 'full-time',
+			url          => 'http.not.url',
+			description  =>
+				'You will work with symfony to develop websites for our customers.',
+			how_to_apply => 'Send me an email',
+			email        => 'for.a.job@example.com',
+		}),
+	);
+
+	ok $f->has_error, 'form has error ok';
+
+	like $f->error_message_plain('location'), qr/required/, 'location required ok';
+	like $f->error_message_plain('position'), qr/required/, 'position required ok';
+	like $f->error_message_plain('company'), qr/required/, 'company required ok';
+	like $f->error_message_plain('url'), qr/invalid/, 'url is invalid ok';
 }
 
 done_testing;
