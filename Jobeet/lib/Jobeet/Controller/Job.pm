@@ -49,7 +49,6 @@ sub edit :Chained('job') :PathPart :Args(0) :Form('Jobeet::Form::Job'){
 	if ($c->req->method eq 'POST'){
 		if ($self->form->submitted_and_valid)
 		{
-			#update_from_formは既存の関数らしい
 			$job->update_from_form($self->form);
 			#uri_forは引数を/でjoinしているらしい
 			$c->redirect( $c->uri_for('/job', $job->token));

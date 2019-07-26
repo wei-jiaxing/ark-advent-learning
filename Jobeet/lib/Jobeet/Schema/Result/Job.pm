@@ -69,3 +69,14 @@ sub publish {
     my ($self) = @_;
     $self->update({ is_activated => 1 });
 }
+
+sub update_from_form {
+    my ($self, $form) = @_;
+    my $category_slug = delete $form->params->{category};
+    my $category = models('Schema::Category')->find({slug => $category_slug})
+        or die 'no such category: ', $category_slug;
+    $self->update({
+        category_id => $category->id,
+        %{ $form->params },
+    });
+}
