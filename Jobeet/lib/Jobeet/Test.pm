@@ -4,6 +4,8 @@ use Ark 'Test';
 use File::Temp qw(tempdir);
 use Jobeet::Models;
 
+# useは{require xxxx: xx->import();}ですから
+# use Jobeet::Testすると、このsubが実行される
 sub import {
 	my ($class, $app, %options) = @_;
 	$app ||= 'Jobeet';
