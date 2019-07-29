@@ -88,6 +88,8 @@ sub atom :Local {
 
 	$c->stash->{w3c_date} = DateTime::Format::W3CDTF->new;
 	$c->stash->{latest_post} = models('Schema::Job')->latest_post;
+
+	$c->forward('index');
 }
 
 1;
