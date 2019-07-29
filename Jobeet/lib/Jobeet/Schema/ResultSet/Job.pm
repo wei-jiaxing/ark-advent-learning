@@ -26,4 +26,15 @@ sub create_from_form {
 	$job;
 }
 
+sub latest_post {
+	my ($self) = @_;
+
+	my $r = $self->search(
+		{ is_activeated => 1 },
+		{ order_by => {-desc => 'create_at'} }
+	);
+
+	$r->first;
+}
+
 1;

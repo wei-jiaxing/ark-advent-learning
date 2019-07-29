@@ -3,6 +3,8 @@
   <head>
     <title><? block title => sub { 'Jobeet - Your best job board' } ?></title>
     <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Latest Jobs"
+          href="<?= $c->uri_for('/job/atom') ?>" />
     <? block javascripts => '' ?>
     <? block stylesheets => '' ?>
   </head>
@@ -68,7 +70,7 @@
           <ul>
             <li><a href="">About Jobeet</a></li>
             <li class="feed"><a href="">Full feed</a></li>
-            <li><a href="">Jobeet API</a></li>
+            <li><a href="<?= $c->uri_for('/job/atom') ?>">Full feed</a></li>
             <li class="last"><a href="">Affiliates</a></li>
           </ul>
         </div>
