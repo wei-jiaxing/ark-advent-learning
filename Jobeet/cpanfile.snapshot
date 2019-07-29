@@ -184,6 +184,14 @@ DISTRIBUTIONS
       perl 5.008001
       strict 0
       warnings 0
+  Cache-FastMmap-1.48
+    pathname: R/RO/ROBM/Cache-FastMmap-1.48.tar.gz
+    provides:
+      Cache::FastMmap 1.48
+      Cache::FastMmap::OnLeave 1.48
+    requirements:
+      ExtUtils::MakeMaker 0
+      Storable 0
   Carp-Clan-6.07
     pathname: E/ET/ETHER/Carp-Clan-6.07.tar.gz
     provides:

@@ -7,6 +7,24 @@ our $VERSION = '0.01';
 
 __PACKAGE__->meta->make_immutable;
 
+use_plugins qw(
+	Session
+	Session::State::Cookie
+	Session::Store::Model
+);
+
+config 'Plugin::Session' => {
+	expires => '+30d',
+};
+
+config 'Plugin::Session::State::Cookie' => {
+	cookie_name => 'Jobeet_session',
+};
+
+config 'Plugin::Session::Store::Model' => {
+	model => 'cache',
+};
+
 __END__
 
 =head1 NAME
