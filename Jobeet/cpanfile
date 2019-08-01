@@ -1,4 +1,5 @@
 requires 'Ark';
+requires 'Ark::Plugin::I18N';
 requires 'Cache::FastMmap';
 requires 'CGI::Simple';
 requires 'Data::Page::Navigation';
@@ -8,6 +9,7 @@ requires 'DateTime::Format::W3CDTF';
 requires 'DBIx::Class';
 requires 'FindBin::libs';
 requires 'GitDDL';
+requires 'Locale::Maketext::Lexicon';
 requires 'Path::Class';
 requires 'SQL::Translator';
 requires 'String::CamelCase';
